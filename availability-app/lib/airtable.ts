@@ -173,7 +173,7 @@ export async function createAvailabilityRule(
     if (rule.effectiveUntil) fields.Effective_Until = rule.effectiveUntil;
   }
 
-  const record = await availabilityTable.create(fields);
+  const record = await availabilityTable.create(fields) as any;
 
   const engineerField = record.get('Engineer') as string[] | undefined;
   return {
