@@ -133,7 +133,7 @@ export async function getSessions(
 
   const records = await sessionsTable
     .select({
-      filterByFormula,
+      filterByFormula: filterFormula,
       view: process.env.SESSIONS_VIEW_ID,
       fields: ['Title', 'Engineer', 'Start', 'End'],
     })
